@@ -30,8 +30,11 @@ public class DavikMenuOptionsTest {
     }
 
     @AfterAll
+    /*
+    TODO: quit browser once you finish testing
+     */
     public static void classTearDown() {
-        DriverSetup.closeDriver();
+        DriverSetup.quitDriver();
     }
 
     @Test
@@ -105,7 +108,11 @@ public class DavikMenuOptionsTest {
     }
     @Test
     public void linkedInButtonTest() {
-        WebElement lnButton = driver.findElement(By.xpath("//img[@data-spai-upd='38']"));
+        /*
+        TODO: Don't use dynamic locators
+         */
+        WebElement lnButton = driver.findElement(By.xpath("//*[@class='social-icon']/a[contains(@href, 'linkedin')]/img"));
+
         assertNotNull(lnButton);
         Actions mouse = new Actions(driver);
         mouse.click(lnButton).build().perform();

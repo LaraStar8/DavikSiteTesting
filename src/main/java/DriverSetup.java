@@ -25,6 +25,14 @@ public class DriverSetup {
             webDriver.close();
         }
     }
+    /*
+    TODO: Once you finish your tests you need to close browser using quit()
+     */
+    public static void quitDriver(){
+        if(webDriver!=null){
+            webDriver.quit();
+        }
+    }
 }
 
 
